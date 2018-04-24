@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<title>Latihan Ajax1.html</title>
+<head>
+<script> function loadXMLDoc() {
+	var xmlhttp;
+	if (window.XMLHttpRequest){ //kode untuk IE7+, Firefox, Chrome, Opera
+		xmlhttp = new XMLHttpRequest();
+	} else { // code untuk IE5, IE6
+		xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+	}
+		xmlhttp.onreadystatechange = function(){
+	if (xmlhttp.readyState==4 && xmlhttp.status == 200) {
+		document.getElementById("nama").innerHTML=xmlhttp.responseText;
+		document.getElementById("nim").innerHTML=xmlhttp.responseText;
+		document.getElementById("kelas").innerHTML=xmlhttp.responseText;
+		}}
+		xmlhttp.open("GET", "mydata.html",true);
+		xmlhttp.send();
+		}
+		</script>
+		</head>
+		<body>
+		<div id="nama">
+		<div id="nim">
+		<div id="kelas">
+		<h2> Klik dibawah untuk menampilkan mahasiswa </h2> </div>
+		<button type ="button" onclick = "loadXMLDoc()" > Tampilkan data Mahasiswa</button>
+		
+		</body>
+		</html>
